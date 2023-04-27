@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+html,
+body{
+	height: 100%;
+	scroll-behavior: smooth;
+
+}
+
+body{
+    font-family: 'poppins', sans-serif;
+    font-size: 1.4rem;
+    background-color: #06060c;
+    color: #fff;
+    place-items: center;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Sections */
+.container {
+	max-width: 140rem;
+	margin-inline: auto;
+	padding: 100px 35px 80px;
+}
+
+.title {
+	position: relative;
+    display: block;
+    margin-bottom: 50px;
+}
+
+.title .primary {
+	font-size: clamp(26px, 5vw, 52px);
+	text-transform: uppercase;
+	color: #fff;
+    position: relative;
+}
+
+.title .secondary {
+    display: block;
+	font-size: clamp(14px, 2.5vw, 16px);
+	font-weight: 400;
+	color: #d6d6e0;
+}
+
+.title__alternate {
+	display: inline;
+	margin-left: 10px;
+}
+.title__alternate span {
+    
+	position: absolute;
+	width: max-content;
+	background-color: #0561ee;
+	padding-inline: 0px;
+	opacity: 0;
+	transform-origin: 10% 75%;
+	animation: rotateWords 9s var(--d) linear infinite;
+}
+@keyframes rotateWords {
+	5% {
+		opacity: 1;
+	}
+	10%,
+	20% {
+		opacity: 1;
+		transform: rotate(3deg);
+	}
+	15% {
+		transform: rotate(-1deg);
+	}
+	25% {
+		opacity: 0;
+		transform: translateY(90px) rotate(10deg);
+	}
+}
+
+.gallery-wrapper {
+	display: flex;
+}
+.gallery-item {
+	position: relative;
+	isolation: isolate;
+	display: flex;
+	flex: 1;
+	height: 550px;
+	background-color: #000;
+	padding: 25px;
+	opacity: 1;
+	overflow: hidden;
+	transition: flex 0.5s, opacity 0.25s;
+}
+
+.gallery-item:hover {
+	opacity: 1;
+	flex: 5;
+}
+
+.gallery-item:not(:hover) {
+	opacity: 0.75;
+}
+
+
+.item-image {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+
+.item-description {
+	align-self: flex-end;
+	text-transform: uppercase;
+	color: #fff;
+}
+.name {
+	font-size: 37px;
+	padding-inline: 10px;
+	transform: translateY(-10px);
+}
+
+
+.role {
+	display: inline-block;
+	padding: 10px;
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+	transform: translateY(10px);
+}
+
+.name,
+.role {
+	opacity: 0;
+	transition: opacity 0.25s, transform 0.3s;
+	transition-delay: 0.35s;
+}
+
+.gallery-item:hover .name,
+.gallery-item:hover .role {
+	opacity: 1;
+	transform: translateY(0);
+}
+.gallery-item:not(:hover) .name,
+.gallery-item:not(:hover) .role {
+	transition-delay: 0s;
+}
+
+@media screen and (max-width: 768px) {
+	.gallery-wrapper {
+		flex-direction: column;
+		height: 100vh;
+	}
+
+	.gallery-item:hover {
+		flex-basis: 100%;
+	}
+}
+
+/* Cuestions */
+
+.container2{
+    max-width: 980px;
+    margin-inline: auto;
+    padding: 50px 15px;
+}
+
+.title {
+    font-size: clamp(26px, 5vw, 40px);
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.accordion-panel {
+    padding: 7px 21px;
+    margin-bottom: 24px;
+    border: 1px solid #777e91;
+    border-radius: 8px;
+}
+
+.accordion input {
+    display: none;
+}
+
+.accordion label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 15px;
+    padding-block: 7px;
+    color: #f4f5f6;
+    cursor: pointer;
+    transition: color 0.25s;
+}
+
+.accordion label:hover,
+.accordion input:checked + label {
+    color: #3b71fe;
+}
+
+.accordion i {
+    color: #3b71fe;
+}
+
+.accordion .close {
+    display: none;
+}
+
+.accordion input:checked + label .close {
+    display: block;
+}
+
+.accordion input:checked + label .open {
+    display: none;
+}
+
+.accordion-body {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.25s ease-in-out;
+}
+
+.accordion-answer {
+    font-size: 14px;
+    color: #777e91;
+    padding-top: 5px;
+    padding-bottom: 7px;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: top left;
+    transition: opacity 0.75s, transform 0.15s;
+}
+
+.accordion input:checked ~ .accordion-body {
+    height: max-content;
+}
+
+.accordion input:checked ~ .accordion-body .accordion-answer {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* cards */
+.container3 {
+	max-width: 140rem;
+	margin-inline: auto;
+	padding: 100px 15px;
+}
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(40rem, 2fr));
+	grid-gap: 3.5rem;
+}
+.card {
+	position: relative;
+	z-index: 1;
+	display: grid;
+    place-content: center;
+	color: #a18a96;
+	text-align: center;
+	padding: 8.5rem;
+    background-size: cover;
+	border-radius: 20px;
+	overflow: hidden;
+}
+.card::before,
+.card::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: calc(70% + 35px);
+	background-color: #fff;
+	transition: transform 0.5s 0.25s;
+}
+.card::before {
+	top: 0;
+	clip-path: polygon(0 0, 100% 0, 100% 45%, 0% 100%);
+	transform: translateY(-100%);
+}
+.card::after {
+	bottom: 0;
+	clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%);
+	transform: translateY(100%);
+}
+.card__body {
+	opacity: 0;
+	transition: opacity 0.25s;
+}
+.card__title {
+	color: #6a515e;
+	margin-bottom: 15px;
+}
+.card:hover::before,
+.card:hover::after {
+	transform: translateY(0);
+}
+.card:hover .card__body {
+	opacity: 1;
+	transition-delay: 0.55s;
+}
+
+.si article:nth-child(n+4) {
+    display: none;
+  }
+.si article.mostrar {
+  display: block;
+}
+.se article:nth-child(n+4) {
+    display: none;
+  }
+.se article.mostrar {
+  display: block;
+}
+.co article:nth-child(n+4) {
+    display: none;
+  }
+.co article.mostrar {
+  display: block;
+}
+
+/* buton*/
+
+.button {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #fff;
+    outline: 2px solid #f2f3f2;
+    padding: 10px 20px;
+    overflow: hidden;
+    transition: color 1s;
+}
+
+.button:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px;
+    z-index: -1;
+    width: 150%;
+    height: 100%;
+    background-color: #3b71fe;
+    transform: scaleX(0) skewX(35deg);
+    transform-origin: left;
+    transition: transform 1s;
+}
+
+.button:hover::before {
+    transform: scaleX(1) skewX(35deg);
+}
+.titulops{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.paragraph span{
+	display: block;
+	opacity: 0;
+	animation: reveal 0.5s fowards var(--d);
+}
+@keyframes reveal{
+	from{transform: translateY(20px);}
+	to { opacity: 1; transform: none;}
+}
+
+
+
+
+
+

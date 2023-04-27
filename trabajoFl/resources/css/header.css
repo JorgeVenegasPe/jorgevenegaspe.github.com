@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1.4rem;
+    background-color: #06060c;
+    color: #fff;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.primary-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 100%;
+	transition: background-color 0.5s;
+}
+
+.container1{
+	max-width: 125rem;
+	margin-inline: auto;
+	padding-inline: 1.8rem;
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+    flex-wrap: wrap;
+	justify-content: space-between;
+	border-bottom: 2px solid 
+		rgba(255, 255, 255, 0.05);
+	transition: height 0.25s;
+    padding-block: 15px;
+
+}
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+}
+.logo {
+	font-size: 2.4rem;
+	font-weight: 900;
+    margin-right: 50px;
+}
+.nav-list {
+	list-style: none;
+	display: flex;
+	gap: 2.5rem;
+}
+
+.nav-link {
+	transition: color 0.25s;
+}
+
+.nav-link:hover {
+	color: #d3d3d3;
+}
+
+header.active {
+	background-color: #fff;
+	box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
+}
+
+header.active .navbar {
+	height: 6rem;
+}
+
+header.active .logo,
+header.active .nav-link {
+	color: #313131;
+}
+
+header.active .nav-link:hover {
+	color: #808080;
+}
+
+#toggler,
+.navbar label {
+    display: none;
+
+}
+
+@media screen and (max-width: 600px) {
+    .menu{
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        background-color: #000;
+    }
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    .navbar label {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    #toggler:checked ~ .menu {
+        max-height: 100%;
+    }
+    header.active .navbar label {
+        color: #313131;
+    }
+    header.active .menu {
+        background-color: white;
+        position: fixed;
+        margin-top: 21em;
+        right: 0.9em;
+        left:  0em;
+    }
+}

@@ -1,0 +1,70 @@
+
+html,
+body {
+	height: 100%;
+}
+body {
+	font-family: 'Poppins', sans-serif;
+	place-items: center;
+    background-color: #06060c;
+}
+input,
+button {
+	font: inherit;
+	border: none;
+    top: 20px;
+}
+/* Base styles end */
+.container4{
+    max-width: 980px;
+    margin-inline: auto;
+    padding: 80px 5px;
+}
+.form {
+    align-items: center;
+    margin-inline: auto;
+	max-width: 980px;
+	border-radius: 8px;
+	flex-direction: column;
+	padding: 25px;
+}
+.button {
+	background-color: #242424;
+	color: #cacaca;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.5s;
+}
+.button:is(:hover, :focus) {
+	background-color: #353535;
+	color: #fff;
+}
+.checkout-information,
+.input-group {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+.input-group {
+	gap: 8px;
+}
+.input-group label {
+	font-size: 14px;
+	color: #f5f5f5;
+	font-weight: bold;
+}
+.input-group input,textarea {
+	width: 100%;
+	padding: 10px 15px;
+	border-radius: 8px;
+	background-color: #f2f2f2;
+    height: 100%;
+}
+.button--checkout {
+	font-size: 10px;
+	font-weight: bold;
+    align-items: center;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	padding: 15px 10px;
+}
