@@ -24,7 +24,7 @@
 				<h1 class="title">
 					Bienvenido
 					<div class="title__alternate">
-						<span style="--d: 0s">Turista</span>
+						<span style="--d: 0s">Turistas</span>
 						<span style="--d: 3s">Viajero</span>
 						<span style="--d: 6s">Aventurero</span>
 					</div>
